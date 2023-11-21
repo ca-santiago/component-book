@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopicSelectorNormalData } from "./stories.data";
+import { TopicSelectorNormalData } from "./stories.mock";
 import TopicSelector from "./TopicSelector";
 
 export default {

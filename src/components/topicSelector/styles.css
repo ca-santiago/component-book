@@ -9,23 +9,6 @@
     flex-wrap: wrap;
 }
 
-.topic-chip {
-    background: rgb(244, 245, 248);
-    border: 1px solid rgb(239, 242, 255);
-    color: rgb(19, 19, 19);
-    border-radius: 15px;
-    max-height: 20px;
-    height: 20px;
-    width: auto;
-    padding: 5px 12px;
-    margin: 5px 3px;
-}
-
-.topic-chip p {
-    font-size: 18px;
-    user-select: none;
-}
-
 .topic-chip.selected {
     background-color: rgb(51, 150, 216);
     color: rgb(255, 255, 255);
