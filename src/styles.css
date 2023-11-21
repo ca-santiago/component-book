@@ -431,36 +431,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.5rem;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .flex {
   display: flex;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .rounded-full {
@@ -476,20 +460,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
-.p-0 {
-  padding: 0px;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
