@@ -32,9 +32,9 @@ export interface TagInputProps {
 const isSingleComa = (str: string): boolean => str[0] === ",";
 
 const isValidTag = (str: string): boolean => {
-  const validLen = str.length > 1;
+  const validLen = str.length >= 1;
   const noSingleComa = !isSingleComa(str);
-  return str[str.length - 1] === "," && validLen && noSingleComa;
+  return validLen && noSingleComa;
 };
 
 const sanitizeTag = (str: string): string => str.trim().replace(",", "");
@@ -48,15 +48,38 @@ const TagInput = ({
   const [tags, setTags] = React.useState<string[]>(initialTags || []);
   const [value, setValue] = React.useState<string>("");
 
+  const setNewtag = (newTag: string) => {
+    if (!isValidTag(newTag)) return;
+
+    setValue("");
+    const newTags = [...tags, sanitizeTag(newTag)];
+    if (onTagsChange) onTagsChange(newTags);
+    setTags(newTags);
+  };
+
   const onChangeHandler = (value: string) => {
-    if (isValidTag(value)) {
-      setValue("");
-      const newTags = [...tags, sanitizeTag(value)];
-      if (onTagsChange) onTagsChange(newTags);
-      setTags(newTags);
-    } else if (isSingleComa(value)) return;
-    else {
+    if (value[value.length - 1] === ",") {
+      setNewtag(value);
+    } else {
       setValue(value);
+    }
+  };
+
+  const handleKeyDown = (e: string) => {
+    switch (e) {
+      case "Backspace": {
+        if (value.length !== 0) return;
+        setTags((prev) => {
+          const newArr = [...prev];
+          newArr.splice(-1);
+          return newArr;
+        });
+        break;
+      }
+      case "Enter": {
+        setNewtag(value);
+        break;
+      }
     }
   };
 
@@ -77,6 +100,7 @@ const TagInput = ({
           />
         ))}
         <input
+          onKeyDown={(e) => handleKeyDown(e.key)}
           className="border-none text-slate-600 outline-none ml-1"
           value={value}
           onChange={(e) => onChangeHandler(e.target.value)}
