@@ -2,18 +2,18 @@ import { TopicSelectorChild } from "./TopicSelector";
 
 export const TopicSelectorNormalData: TopicSelectorChild[] = [
     {
-        data: 'Software',
+        text: 'Software',
         id: 'Software',
         selected: false,
         children: [
             {
-                data: 'PC',
+                text: 'PC',
                 id: 'PC',
                 selected: false,
                 children: []
             },
             {
-                data: 'Microsoft',
+                text: 'Microsoft',
                 id: 'Microsoft',
                 selected: false,
                 children: []
@@ -21,18 +21,18 @@ export const TopicSelectorNormalData: TopicSelectorChild[] = [
         ]
     },
     {
-        data: 'Gaming',
+        text: 'Gaming',
         id: 'Gaming',
         selected: false,
         children: [
             {
-                data: 'Master Race',
+                text: 'Master Race',
                 id: 'Master Race',
                 selected: false,
                 children: []
             },
             {
-                data: 'Tencent',
+                text: 'Tencent',
                 id: 'Tencent',
                 selected: false,
                 children: []
@@ -40,35 +40,35 @@ export const TopicSelectorNormalData: TopicSelectorChild[] = [
         ]
     },
     {
-        data: 'Sports',
+        text: 'Sports',
         id: 'Sports',
         selected: false,
         children: [
             {
-                data: 'Soccer',
+                text: 'Soccer',
                 id: 'Soccer',
                 selected: false,
                 children: []
             },
             {
-                data: 'Tenis',
+                text: 'Tenis',
                 id: 'Tenis',
                 selected: false,
                 children: []
             },
             {
-                data: 'Celebrities',
+                text: 'Celebrities',
                 id: 'Celebrities',
                 selected: false,
                 children: [
                     {
-                        data: 'Michael Jordan',
+                        text: 'Michael Jordan',
                         id: 'Michael Jordan',
                         selected: false,
                         children: []
                     },
                     {
-                        data: 'Cristiano Ronaldo',
+                        text: 'Cristiano Ronaldo',
                             id: 'Cristiano Ronaldo',
                         selected: false,
                         children: []
