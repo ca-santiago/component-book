@@ -24,6 +24,7 @@ const TagChip = (props: TagChipProps) => {
  * @param tagSizeLimit default: 99
  */
 export interface TagInputProps {
+  onTagsChange?: (tags: string[]) => void;
   initialTags?: string[];
   tagSizeLimit?: number;
 }
@@ -39,14 +40,20 @@ const isValidTag = (str: string): boolean => {
 const sanitizeTag = (str: string): string => str.trim().replace(",", "");
 
 // TODO: casantiago - Implement tagSizeLimit
-const TagInput = ({ initialTags, tagSizeLimit }: TagInputProps) => {
+const TagInput = ({
+  initialTags,
+  tagSizeLimit,
+  onTagsChange,
+}: TagInputProps) => {
   const [tags, setTags] = React.useState<string[]>(initialTags || []);
   const [value, setValue] = React.useState<string>("");
 
   const onChangeHandler = (value: string) => {
     if (isValidTag(value)) {
       setValue("");
-      setTags((prev) => [...prev, sanitizeTag(value)]);
+      const newTags = [...tags, sanitizeTag(value)];
+      if (onTagsChange) onTagsChange(newTags);
+      setTags(newTags);
     } else if (isSingleComa(value)) return;
     else {
       setValue(value);
@@ -54,7 +61,9 @@ const TagInput = ({ initialTags, tagSizeLimit }: TagInputProps) => {
   };
 
   const onRemoveHandler = (i: number) => {
-    setTags((prev) => prev.filter((_, index) => index !== i));
+    const newTags = tags.filter((_, index) => index !== i);
+    if (onTagsChange) onTagsChange(newTags);
+    setTags(newTags);
   };
 
   return (
