@@ -1,5 +1,4 @@
 import React from "react";
-// import {  } from "./stories.mock";
 import TagInput from "./tagInput";
 
 export default {
