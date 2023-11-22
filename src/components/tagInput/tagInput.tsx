@@ -9,7 +9,7 @@ interface TagChipProps {
 const TagChip = (props: TagChipProps) => {
   return (
     <div className="p-0.5 px-1 pl-3 border border-slate-500 rounded-full flex gap-1 text-slate-600 items-center select-none">
-      <p className="">{props.text}</p>
+      <p className="-mt-0.5">{props.text}</p>
       <IoIosCloseCircleOutline
         onClick={() => props.onRemove()}
         size={22}
