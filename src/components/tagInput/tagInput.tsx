@@ -69,11 +69,10 @@ const TagInput = ({
     switch (e) {
       case "Backspace": {
         if (value.length !== 0) return;
-        setTags((prev) => {
-          const newArr = [...prev];
-          newArr.splice(-1);
-          return newArr;
-        });
+        const newTags = [...tags];
+        newTags.splice(-1);
+        setTags(newTags);
+        if (onTagsChange) onTagsChange(newTags);
         break;
       }
       case "Enter": {

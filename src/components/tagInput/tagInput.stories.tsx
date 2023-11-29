@@ -28,14 +28,14 @@ export const InitialTags = () => {
   const [tags, setTags] = React.useState<string[]>([]);
   return (
     <div>
+      <h2>Add your tags here</h2>
+      <TagInput initialTags={somePrefilledTags} onTagsChange={setTags} />
       <div>
         {tags.map((t) => (
           <p>{t}</p>
         ))}
       </div>
       <br />
-      <h2>Add your tags here</h2>
-      <TagInput initialTags={somePrefilledTags} onTagsChange={setTags} />
     </div>
   );
 };
